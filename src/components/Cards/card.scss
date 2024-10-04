@@ -1,0 +1,72 @@
+.cards-container {
+  background: $color2;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3.125rem 3.75rem;
+  padding: 3.5rem 3.125rem;
+  @include small {
+    padding: 1rem 1rem;
+    gap: 1.5rem 1.625rem;
+  }
+  @include xsmall {
+    background: white;
+    padding: 0;
+  }
+}
+
+.card-content {
+  border-radius: calc(10rem / 16);
+  width: 340px;
+  height: 340px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 330ms ease-in-out;
+  @include small {
+    width: 335px;
+    height: 255px;
+  }
+  @include xxsmall {
+    width: 100%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    z-index: 1;
+    border-radius: 0.7rem;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    border-radius: 0.7rem;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+    color: white;
+    position: absolute;
+    width: 85%;
+    bottom: 0;
+    left: 0;
+    padding: 0.8rem;
+    line-height: 142.6%;
+    z-index: 2;
+  }
+}
